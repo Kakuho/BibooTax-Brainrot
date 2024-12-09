@@ -1,0 +1,22 @@
+BibooTax Brainrot
+
+Terminals:
+
+skibidi 	    
+nerizzler 	  
+shiori 	      
+gyatt 	      
+:D 	          
+baubau 	      
+rockrock 	    
+bibootax 	    
+
+// ------------------------------------------------------ //
+
+Grmamar:
+
+Start -> cmd cmdlist
+
+cmdlist -> cmd cmdlist | null
+
+cmd -> terminals

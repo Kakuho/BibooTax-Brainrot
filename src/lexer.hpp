@@ -6,13 +6,17 @@
 
 #include <vector>
 #include <cstdint>
+#include <unordered_set>
 
 #include "tokens.hpp"
 
 namespace BibooTax{
 
+using TokenBuffer = std::vector<Token>;
+
 class Lexer{
     struct EOFException{};
+    struct UndefinedSymbolException{};
   public:
     Lexer(const std::vector<char>& input);
     Lexer(std::vector<char>&& input);
@@ -21,8 +25,13 @@ class Lexer{
     //  Operational
     // ------------------------------------------------------ //
 
+    void Match(char ch);
+
     [[nodiscard]] char ReadChar();
     void GenerateTokens();
+
+    [[nodiscard]] bool IsWhiteSpace(char ch) const;
+    void ParseWhiteSpace();
 
     void DestructiveWriteBinaryInputIR(std::vector<char>&& charbuffer){
       m_input = std::move(charbuffer);
@@ -33,9 +42,9 @@ class Lexer{
   private:
     std::size_t m_cursor;
     std::vector<char> m_input;
-    std::vector<Token> m_tokens;    // used as output
+    TokenBuffer m_tokens;    // used as output
 };
 
-}
+} // namespace BibooTax
 
 #endif

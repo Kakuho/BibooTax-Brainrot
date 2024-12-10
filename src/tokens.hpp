@@ -29,6 +29,6 @@ enum class IRToken : std::uint8_t {
   RightBracket
 };
 
-}
+} // namespace BibooTax
 
 #endif 

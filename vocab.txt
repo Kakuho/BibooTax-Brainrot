@@ -1,5 +1,11 @@
 BibooTax Brainrot
 
+Whitespace is insignificant:
+  
+  ' '
+  '\n'
+  '\r'
+
 Bf Equivalent:
 
   skibidi 	    >
